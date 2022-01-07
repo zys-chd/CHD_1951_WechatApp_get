@@ -10,7 +10,7 @@ import threading
 
 
 name = "张三"
-tel = "12315"
+tel = "13813881338"
 campus = "渭水"
 building = "1"
 number = "1101"
@@ -117,9 +117,15 @@ def paste():
     pg.hotkey("ctrl", "v")
 
 
-def InTime() -> bool:
-    ref = (ScheduledTime - datetime.datetime.today()).days
-    return ref < 0
+def PastTime() -> bool:
+    global ScheduledTime
+    rest = (ScheduledTime - datetime.datetime.now()).days
+    print("PastTime Function:{}".format(ScheduledTime))
+    print("PastTime Function Now:{}".format(datetime.datetime.now()))
+    rest = ScheduledTime - datetime.datetime.now()
+    rest=rest.days-304 # why this number? i don't know, maybe magic.
+    print(rest)
+    return rest < 0
 
 
 def ResTime():
@@ -180,7 +186,7 @@ def check():
 def run():
     global ScheduledTime, flag
     flag = 1
-    while not InTime():
+    while not PastTime():
         if ResTime().seconds > 60:
             PrintLog("距离计时结束还有{:d}秒".format(ResTime().seconds))
             sleep(1)
