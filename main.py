@@ -9,17 +9,17 @@ import tkinter
 import threading
 
 
-name = "张毓松"
-tel = "18779401572"
+name = "张三"
+tel = "12315"
 campus = "渭水"
-building = "13"
-number = "7114"
+building = "1"
+number = "1101"
 waitingTime = 1.5  # 根据网络状况选择合适的等待时间 网络越差数值越大
 Year = 2022
 Month = 1
-Day = 7
-Hour = 17
-Min = 2
+Day = 8
+Hour = 12
+Min = 0
 ScheduledTime = datetime.datetime(Year, Month, Day, Hour, Min)  # 设置预定时间
 flag = 1
 
@@ -109,7 +109,7 @@ def PrintLog(log: str):
 
 def PrintVar():
     global Year, Month, Day, Hour, Min, name, tel, campus, building, number, waitingTime
-    PrintLog("读入参数：\nYear:{}\nMonth:{}\nDay:{}\nHour:{}\nMin:{}\nname:{}\ntel:{}\ncampus:{}\nbuilding:{}\nnumber:{}\nwaitingTime:{}\n".format(
+    PrintLog("读入参数:\nYear:{}\nMonth:{}\nDay:{}\nHour:{}\nMin:{}\nname:{}\ntel:{}\ncampus:{}\nbuilding:{}\nnumber:{}\nwaitingTime:{}\n".format(
         Year, Month, Day, Hour, Min, name, tel, campus, building, number, waitingTime))
 
 
@@ -147,7 +147,7 @@ def go():
     copy(number)  # 输入宿舍号
     paste()
     pg.click(x=1115, y=941)  # 点击立即支付
-    PrintLog("完成抢购!请微信扫码完成支付！")
+    PrintLog("完成抢购!请微信扫码完成支付!")
     # PrintVar()
     # print(pg.position())
 
@@ -166,14 +166,14 @@ def check():
         building = BuildingEntry.get()
         number = NumberEntry.get()
         waitingTime = float(WaitingTimeEntry.get())
-        PrintLog("读入参数：\nYear:{}\nMonth:{}\nDay:{}\nHour:{}\nMin:{}\nname:{}\ntel:{}\ncampus:{}\nbuilding:{}\nnumber:{}\nwaitingTime:{}\n".format(
+        PrintLog("读入参数:\nYear:{}\nMonth:{}\nDay:{}\nHour:{}\nMin:{}\nname:{}\ntel:{}\ncampus:{}\nbuilding:{}\nnumber:{}\nwaitingTime:{}\n".format(
             Year, Month, Day, Hour, Min, name, tel, campus, building, number, waitingTime))
         return False
     except ValueError:
         PrintLog("输入值有误")
         return True
     except:
-        PrintLog("出错了，练习作者吧！")
+        PrintLog("出错了，联系作者吧!")
         return True
 
 
@@ -216,7 +216,7 @@ def stop():
     flag = 0
 
 
-WarningText = "注意:\n1：点击“开始抢购”按钮前，请先打开长大1951微信小程序，保持小程序的默认位置不要移动，将需要的物资放入购物袋并勾选，维持在购物车内等待结算的画面\n2：根据网络状况选择合适的等待时间,网络越差数值越大(默认为1)\n"
+WarningText = "注意:\n1:点击“开始抢购”按钮前，请先打开长大1951微信小程序，保持小程序的默认位置不要移动，将需要的物资放入购物袋并勾选，维持在购物车内等待结算的画面\n2:根据网络状况选择合适的等待时间,网络越差数值越大(默认为1)\n"
 
 SubmitButton = tkinter.Button(
     root, width=25, height=3, text="开始抢购", command=main)

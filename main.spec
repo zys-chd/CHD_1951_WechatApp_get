@@ -37,4 +37,4 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='c:\\Users\\zys\\Desktop\\abz2j-vm8dq-001.ico')
+          entitlements_file=None , icon='icons.ico')
