@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\zys\\Desktop\\programming\\python\\MyEnv\\venv\\Scripts'],
+             pathex=['/home/zys/Programming/python/virtualenv/venv\u3000/bin'],
              binaries=[],
              datas=[],
              hiddenimports=[],
