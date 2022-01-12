@@ -1,0 +1,6 @@
+./.vscode
+./build
+./test.py
+./main.spec
+./__pychche__
+

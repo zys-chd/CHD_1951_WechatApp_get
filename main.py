@@ -7,6 +7,10 @@ from pyperclip import copy
 from time import sleep
 import tkinter
 import threading
+from ttkthemes import *
+from tkinter import ttk
+from tkinter import *
+from tkinter.ttk import *
 
 
 name = "张三"
@@ -23,7 +27,7 @@ Min = 0
 ScheduledTime = datetime.datetime(Year, Month, Day, Hour, Min)  # 设置预定时间
 flag = 1
 
-root = tkinter.Tk()
+root = ThemedTk(theme="arc", toplevel=True, themebg=True)
 root.title("长大1951商品限时抢购小程序")
 root.geometry("800x450")
 
